@@ -2,6 +2,10 @@
   "domain": "bms_ble",
   "name": "BLE Battery Management",
   "bluetooth": [
+     {
+      "local_name": "BlueNovaMPS",
+      "service_uuid": "0000ffe0-0000-1000-8000-00805f9b34fb"
+    },   
     {
       "local_name": "SmartBat-[AB]*",
       "service_uuid": "0000fff0-0000-1000-8000-00805f9b34fb"
