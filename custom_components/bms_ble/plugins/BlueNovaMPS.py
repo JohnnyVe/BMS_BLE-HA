@@ -28,7 +28,7 @@ BAT_TIMEOUT = 10
 
 
 class BMS(BaseBMS):
-    """Dummy battery class implementation."""
+    """BlueNova MPS battery class implementation."""
 
     def __init__(self, ble_device: BLEDevice, reconnect: bool = False) -> None:
         """Initialize BMS."""
@@ -38,17 +38,17 @@ class BMS(BaseBMS):
     @staticmethod
     def matcher_dict_list() -> list[dict[str, Any]]:
         """Provide BluetoothMatcher definition."""
-        return [{"local_name": "dummy", "connectable": True}]
+        return [{"local_name": "BlueNovaMPS", "connectable": True}]
 
     @staticmethod
     def device_info() -> dict[str, str]:
         """Return device information for the battery management system."""
-        return {"manufacturer": "Dummy Manufacturer", "model": "dummy model"}
+        return {"manufacturer": "BlueNova", "model": "MPS BN13V-108-1.4k BT"}
 
     @staticmethod
     def uuid_services() -> list[str]:
         """Return list of 128-bit UUIDs of services required by BMS."""
-        return [normalize_uuid_str("0000")]  # change service UUID here!
+        return [normalize_uuid_str("0000ffe0-0000-1000-8000-00805f9b34fb")]  # change service UUID here!
 
     @staticmethod
     def uuid_rx() -> str:
